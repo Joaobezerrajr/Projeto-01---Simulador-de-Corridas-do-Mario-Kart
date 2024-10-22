@@ -1,103 +1,61 @@
-<h1>Desafio de projeto do Felipão: Mario Kart.JS</h1>
+# 🏁 Simulador de Corrida
 
-  <table>
-        <tr>
-            <td>
-                <img src="./images/header.gif" alt="Mario Kart" width="200">
-            </td>
-            <td>
-                <b>Objetivo:</b>
-                <p>Mario Kart é uma série de jogos de corrida desenvolvida e publicada pela Nintendo. Nosso desafio será criar uma lógica de um jogo de vídeo game para simular corridas de Mario Kart, levando em consideração as regras e mecânicas abaixo.</p>
-            </td>
-        </tr>
-    </table>
+Este projeto é um simples **simulador de corrida** baseado em turnos, no qual dois personagens competem rolando dados e testando suas habilidades em três tipos de blocos: reta, curva e confronto. A pontuação é atribuída com base nos resultados dos dados e nas habilidades de cada personagem.
 
-<h2>Players</h2>
-      <table style="border-collapse: collapse; width: 800px; margin: 0 auto;">
-        <tr>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Mario</p>
-                <img src="./images/mario.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 4</p>
-                <p>Manobrabilidade: 3</p>
-                <p>Poder: 3</p>
-            </td>
-             <td style="border: 1px solid black; text-align: center;">
-                <p>Peach</p>
-                <img src="./images/peach.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 3</p>
-                <p>Manobrabilidade: 4</p>
-                <p>Poder: 2</p>
-            </td>
-              <td style="border: 1px solid black; text-align: center;">
-                <p>Yoshi</p>
-                <img src="./images/yoshi.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 2</p>
-                <p>Manobrabilidade: 4</p>
-                <p>Poder: 3</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Bowser</p>
-                <img src="./images/bowser.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 5</p>
-                <p>Manobrabilidade: 2</p>
-                <p>Poder: 5</p>
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Luigi</p>
-                <img src="./images/luigi.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 3</p>
-                <p>Manobrabilidade: 4</p>
-                <p>Poder: 4</p>
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Donkey Kong</p>
-                <img src="./images/dk.gif" alt="Mario Kart" width="60" height="60">
-            </td>
-            <td style="border: 1px solid black; text-align: center;">
-                <p>Velocidade: 2</p>
-                <p>Manobrabilidade: 2</p>
-                <p>Poder: 5</p>
-            </td>
-        </tr>
-    </table>
+## 🚀 Funcionalidades
 
-<p></p>
+- Dois personagens competem (Mario e Luige) em 5 rodadas.
+- Cada rodada é composta por um tipo de bloco (reta, curva ou confronto) selecionado aleatoriamente.
+- Os personagens rolam um dado, e o resultado é somado à habilidade correspondente (velocidade, manobrabilidade ou poder).
+- Pontos são atribuídos com base em quem tem a maior pontuação em cada rodada.
+- Confrontos permitem que um personagem cause a perda de pontos do oponente.
+- Após 5 rodadas, o vencedor é declarado com base no número de pontos.
 
-<h3>🕹️ Regras & mecânicas:</h3>
+## 🕹️ Como Funciona
 
-<b>Jogadores:</b>
+O simulador segue as seguintes regras:
 
-<input type="checkbox" id="jogadores-item" />
-<label for="jogadores-item">O Computador deve receber dois personagens para disputar a corrida em um objeto cada</label>
+1. **Tipos de blocos**: Reta (testa a velocidade), Curva (testa a manobrabilidade), e Confronto (testa o poder).
+2. **Rolagem de dados**: Cada personagem rola um dado de 6 lados.
+3. **Atributos dos personagens**: 
+   - Mario tem maior velocidade (4) e manobrabilidade moderada (3).
+   - Luige tem maior poder (4) e manobrabilidade mais alta (4).
+4. **Pontuação**:
+   - Quem tiver a maior soma de rolagem + atributo ganha 1 ponto na rodada.
+   - Nos confrontos, se um personagem perder, ele também perde 1 ponto.
 
-<b>Pistas:</b>
+## 🛠️ Como Executar
 
-<ul>
-  <li><input type="checkbox" id="pistas-1-item" /> <label for="pistas-1-item">Os personagens irão correr em uma pista aleatória de 5 rodadas</label></li>
-  <li><input type="checkbox" id="pistas-2-item" /> <label for="pistas-2-item">A cada rodada, será sorteado um bloco da pista que pode ser uma reta, curva ou confronto</label>
-    <ul>
-      <li><input type="checkbox" id="pistas-2-1-item" /> <label for="pistas-2-1-item">Caso o bloco da pista seja uma RETA, o jogador deve jogar um dado de 6 lados e somar o atributo VELOCIDADE, quem vencer ganha um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-2-item" /> <label for="pistas-2-2-item">Caso o bloco da pista seja uma CURVA, o jogador deve jogar um dado de 6 lados e somar o atributo MANOBRABILIDADE, quem vencer ganha um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-3-item" /> <label for="pistas-2-3-item">Caso o bloco da pista seja um CONFRONTO, o jogador deve jogar um dado de 6 lados e somar o atributo PODER, quem perder, perde um ponto</label></li>
-      <li><input type="checkbox" id="pistas-2-3-item" /> <label for="pistas-2-3-item">Nenhum jogador pode ter pontuação negativa (valores abaixo de 0)</label></li>
-    </ul>
-  </li>
-</ul>
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/simulador-corrida.git
 
-<b>Condição de vitória:</b>
+2. Acesse o diretório do projeto:
+   ```bash
+   cd simulador-corrida
 
-<input type="checkbox" id="vitoria-item" />
-<label for="vitoria-item">Ao final, vence quem acumulou mais pontos</label>
+3. Instale as dependências (se houver):
+   ```bash
+   npm install
+
+4. Execute o simulador:
+   ```bash
+   node index.js
+
+Observe o progresso da corrida e o vencedor no console!
+
+
+## 📄 Exemplo de Saída
+```
+🏁🚨 Corrida entre Mario e Luige começando... 
+🏁 Rodada 1
+Bloco: CURVA
+Mario 🎲 rolou um dado de manobrabilidade 5 + 3 = 8
+Luige 🎲 rolou um dado de manobrabilidade 4 + 4 = 8
+...
+Resultado final:
+Mario: 2 ponto(s)
+Luige: 3 ponto(s)
+
+Luige venceu a corrida! Parabéns! 🏆🏆
+
